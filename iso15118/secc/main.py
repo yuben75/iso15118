@@ -1,6 +1,13 @@
 import asyncio
 import logging
 
+import sys
+import os
+
+# 動態添加專案根目錄的模組路徑
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../', 'iso15118'))
+sys.path.append(project_root)
+
 from iso15118.secc import SECCHandler
 from iso15118.secc.controller.interface import ServiceStatus
 from iso15118.secc.controller.simulator import SimEVSEController

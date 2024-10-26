@@ -1,4 +1,10 @@
 import pytest
+import sys
+import os
+
+# 動態添加專案根目錄的模組路徑
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../', 'iso15118'))
+sys.path.append(project_root)
 
 from iso15118.shared.validators import one_field_must_be_set, validate_bytes_value_range
 
